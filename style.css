@@ -30,7 +30,7 @@ body {
   --bg-color: #000000;
   --second-bg-color: rgb(255, 250, 232);
   --text-color: rgb(255, 255, 255);
-  --main-color: rgb(22, 22, 22);
+  --main-color: rgb(0, 0, 0);
   --third-bg-color: var(--text-color);
   --navbar-text-color: #f0cbff;
   --navbar-color: #531a64;
