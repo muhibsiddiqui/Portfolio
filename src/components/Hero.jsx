@@ -111,7 +111,7 @@ export default function Hero() {
               <div className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-gray-800 shadow-2xl shadow-cyan-500/10 bg-gray-900">
                 {/* ↓ Replace with your real photo: src="/images/your-photo.jpg" */}
                 <img
-                  src="/public/images/pp.PNG"
+                  src="/images/pp.PNG"
                   alt="Muhammad Muhib Siddiqui"
                   className="w-full h-full object-cover object-top scale-110"
                 />
