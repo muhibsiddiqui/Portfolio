@@ -10,7 +10,7 @@ const projects = [
     description:
       'Built an AI-powered system to automate candidate screening, generate evaluation reports, and enhance hiring decisions through bias-aware analysis. Implemented real-time STT/TTS pipeline, AI answer evaluation, multi-modal candidate scoring, and AI-driven proctoring.',
     image: '/images/CODING.jpg',
-    tags: ['JWT Auth', 'DeepSeek', 'REST API', 'ElevenLabs', 'gTTS', 'OpenCV', 'ATS', 'YOLOv8', 'MediaPipe', 'LangChain', 'Python', 'Flask', 'React', 'TypeScript'],
+    tags: [ 'Python', 'Flask', 'React', 'TypeScript','JWT Auth', 'DeepSeek', 'REST API', 'ElevenLabs', 'gTTS', 'OpenCV', 'ATS', 'YOLOv8', 'MediaPipe', 'LangChain'],
     github: 'https://github.com/muhibsiddiqui',
     demo: 'https://intellihire.com.pk',
     featured: true,
