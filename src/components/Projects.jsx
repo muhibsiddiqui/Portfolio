@@ -8,11 +8,11 @@ const projects = [
     accentColor: 'from-cyan-500/20 to-blue-600/10',
     borderColor: 'border-cyan-500/40 hover:border-cyan-400/60',
     description:
-      'An AI-powered system to automate initial candidate screening, generate detailed bias-aware evaluation reports, and enhance data-driven hiring decisions using RAG and LLMs.',
+      'Built an AI-powered system to automate candidate screening, generate evaluation reports, and enhance hiring decisions through bias-aware analysis. Implemented real-time STT/TTS pipeline, AI answer evaluation, multi-modal candidate scoring, and AI-driven proctoring.',
     image: '/images/CODING.jpg',
-    tags: ['Python', 'Flask', 'React', 'TypeScript', 'AI/ML', 'RAG', 'LLMs'],
+    tags: ['JWT Auth', 'DeepSeek', 'REST API', 'ElevenLabs', 'gTTS', 'OpenCV', 'ATS', 'YOLOv8', 'MediaPipe', 'LangChain', 'Python', 'Flask', 'React', 'TypeScript'],
     github: 'https://github.com/muhibsiddiqui',
-    demo: null,
+    demo: 'https://intellihire.com.pk',
     featured: true,
     wide: true,
   },
@@ -103,7 +103,7 @@ export default function Projects() {
                     <Star size={11} className="fill-current" />
                     {featured.label}
                   </span>
-                  <span className="text-xs text-gray-600">Ongoing</span>
+                  <span className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-semibold rounded-full border bg-emerald-500/15 border-emerald-500/40 text-emerald-300">Completed</span>
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">
                   {featured.title}
@@ -128,6 +128,16 @@ export default function Projects() {
                 >
                   <Github size={16} />
                   View Code
+                  <ArrowUpRight size={14} />
+                </a>
+                <a
+                  href={featured.demo}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors ml-auto"
+                >
+                  <ExternalLink size={15} />
+                  intellihire.com.pk
                   <ArrowUpRight size={14} />
                 </a>
               </div>
