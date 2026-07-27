@@ -81,7 +81,7 @@ export default function Footer() {
         {/* ── Bottom bar ── */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 py-5">
           <p className="text-xs text-gray-600">
-            © {new Date().getFullYear()} Muhammad Muhib Siddiqui · Built with React & Tailwind CSS
+            © {new Date().getFullYear()} Muhammad Muhib Siddiqui · Built with passion.
           </p>
           <a
             href="#home"

@@ -5,7 +5,7 @@ const highlights = [
     icon: <BrainCircuit size={17} />,
     color: 'text-cyan-400',
     bg: 'bg-cyan-500/10 border-cyan-500/30',
-    title: 'AI-Powered Interview Assistant (FYP) — Ongoing',
+    title: 'AI-Powered Interview Assistant (FYP) — Completed Successfully',
     description:
       'Building an end-to-end AI system using Python, React, TypeScript, and RAG/LLMs to automate candidate screening, generate bias-aware evaluation reports, and enhance data-driven hiring decisions.',
   },
