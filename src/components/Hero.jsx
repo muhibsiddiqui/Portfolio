@@ -38,7 +38,7 @@ export default function Hero() {
 
             {/* Role tags */}
             <div className="flex flex-wrap gap-2 mb-6">
-              {['Data Engineer', 'Data Analyst', 'Software Engineer', 'Full-Stack Dev'].map(role => (
+              {['Software Engineer', 'Full-Stack Developer', 'Data Engineer', 'AI Enthusiast'].map(role => (
                 <span
                   key={role}
                   className="px-3 py-1 bg-gray-900 border border-cyan-500/40 rounded-full text-cyan-300 text-xs font-semibold tracking-wide"
@@ -50,10 +50,10 @@ export default function Hero() {
 
             {/* Sub-headline */}
             <p className="text-base md:text-lg text-gray-400 max-w-xl mb-8 leading-relaxed">
-              CS final-year student specialising in{' '}
-              <span className="text-cyan-400 font-medium">Data Engineering</span>,{' '}
+              Full-Stack Software Engineer specialising in{' '}
+              <span className="text-cyan-400 font-medium">Software Engineering</span>,{' '}
               <span className="text-cyan-400 font-medium">Business Intelligence</span>, and{' '}
-              <span className="text-cyan-400 font-medium">Software Engineering</span> — turning raw data
+              <span className="text-cyan-400 font-medium">data Engineering</span> — turning raw data
               into actionable insights and building robust, scalable systems.
             </p>
 
@@ -111,7 +111,7 @@ export default function Hero() {
               <div className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-gray-800 shadow-2xl shadow-cyan-500/10 bg-gray-900">
                 {/* ↓ Replace with your real photo: src="/images/your-photo.jpg" */}
                 <img
-                  src="/images/pp.PNG"
+                  src="/images/pp.jpeg"
                   alt="Muhammad Muhib Siddiqui"
                   className="w-full h-full object-cover object-top scale-110"
                 />

@@ -87,7 +87,7 @@ export default function About() {
           <div className="lg:col-span-3 space-y-5">
             {/* Role badges */}
             <div className="flex flex-wrap gap-2">
-              {['Data Engineer', 'Data Analyst', 'Software Engineer', 'Full-Stack Dev', 'AI & ML'].map(role => (
+              {['Data Engineer',  'Software Engineer', 'Full-Stack Developer', 'AI & ML'].map(role => (
                 <span key={role} className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-xs font-semibold tracking-wide">
                   {role}
                 </span>
@@ -95,14 +95,15 @@ export default function About() {
             </div>
 
             <p className="text-gray-400 leading-relaxed text-base">
-              I'm a <span className="text-cyan-400 font-medium">final-year Computer Science student</span> at
-              FAST-NUCES with a strong focus on{' '}
-              <span className="text-white font-medium">Data Engineering</span>,{' '}
-              <span className="text-white font-medium">Business Intelligence</span>, and{' '}
-              <span className="text-white font-medium">Software Engineering</span>. I design and build
-              data pipelines, analytical dashboards, and AI-driven systems that transform complex datasets
-              into clear, decision-ready insights — and where the problem calls for it, I build the
-              full-stack application around them too.
+              I'm a <span className="text-cyan-400 font-medium">Full-Stack Software Engineer</span>
+               with a strong focus on{' '}
+              <span className="text-white font-medium">Software Engineering</span>,{' '}
+              <span className="text-white font-medium">Data Engineering</span>, and{' '}
+              <span className="text-white font-medium"> Gen AI</span>. I design and build
+              scalable web applications and intelligent software solutions using modern full-stack technologies and database —
+               Skilled in Building
+              Data Pipelines and Dashboards that transform complex datasets
+              into clear, decision-ready insights too.
             </p>
 
             {/* Quick contact grid */}

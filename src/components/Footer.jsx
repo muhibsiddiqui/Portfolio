@@ -28,8 +28,8 @@ export default function Footer() {
               </span>
             </a>
             <p className="text-sm text-gray-500 leading-relaxed max-w-xs">
-              Data Engineer · Data Analyst · Software Engineer based in Karachi, Pakistan.
-              Final-year CS student at FAST-NUCES.
+              Data Engineer · Software developer · Software Engineer based in Karachi, Pakistan.
+              Fresh Graduate from FAST-NUCES.
             </p>
             {/* Contact mini */}
             <div className="space-y-2 pt-1">

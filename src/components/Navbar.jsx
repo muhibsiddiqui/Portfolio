@@ -42,7 +42,7 @@ export default function Navbar() {
 
           {/* Tagline — centre */}
           <p className="text-sm text-gray-400 hidden lg:block tracking-wide font-medium">
-            Data Analyst &nbsp;·&nbsp; SQA &nbsp;·&nbsp; Software Engineer
+            Software Developer &nbsp;·&nbsp; Data Engineer 
           </p>
 
           {/* Resume CTA */}

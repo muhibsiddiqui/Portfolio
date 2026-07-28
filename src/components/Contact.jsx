@@ -136,7 +136,7 @@ export default function Contact() {
                     name="name"
                     value={form.name}
                     onChange={handleChange}
-                    placeholder="John Doe"
+                    placeholder="Name"
                     className={`w-full px-4 py-3 bg-gray-950 border rounded-lg text-gray-100 placeholder-gray-600 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 transition-colors ${
                       errors.name ? 'border-red-500' : 'border-gray-700 hover:border-gray-600'
                     }`}
@@ -155,7 +155,7 @@ export default function Contact() {
                     name="email"
                     value={form.email}
                     onChange={handleChange}
-                    placeholder="john@example.com"
+                    placeholder="Name@example.com"
                     className={`w-full px-4 py-3 bg-gray-950 border rounded-lg text-gray-100 placeholder-gray-600 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 transition-colors ${
                       errors.email ? 'border-red-500' : 'border-gray-700 hover:border-gray-600'
                     }`}

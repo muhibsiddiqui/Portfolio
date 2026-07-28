@@ -33,6 +33,50 @@ const icons = {
 }
 
 const categories = [
+
+    {
+    id: 'code',
+    label: 'Software Engineering',
+    icon: icons.code,
+    accent: 'blue',
+    ring: 'ring-blue-500/30',
+    glow: 'shadow-blue-500/10',
+    iconBg: 'bg-blue-500/10 text-blue-400',
+    bar: 'bg-blue-400',
+    badge: 'bg-blue-500/10 text-blue-300 border-blue-500/20',
+    skills: [
+      { name: 'OOP,', logo: null },
+      { name: 'DSA,', logo: null },
+      { name: 'REST API,', logo: null },
+      { name: 'AUth/AuthZ,', logo: null },
+      { name: 'Flask', logo: null },
+      { name: 'Node.js', logo: null },
+      { name: 'C / C++', logo: null },
+      { name: 'Dotnet', logo: null },
+      { name: 'HTML / CSS / JS', logo: null },
+      { name: 'TypeScript', logo: null },
+    ],
+  },  {
+    id: 'tools',
+    label: 'Tools & Platforms',
+    icon: icons.tools,
+    accent: 'orange',
+    ring: 'ring-orange-500/30',
+    glow: 'shadow-orange-500/10',
+    iconBg: 'bg-orange-500/10 text-orange-400',
+    bar: 'bg-orange-400',
+    badge: 'bg-orange-500/10 text-orange-300 border-orange-500/20',
+    skills: [
+      { name: 'Git & GitHub', logo: null },
+      { name: 'Visual Studio/Code', logo: null },
+      { name: 'Cursor', logo: null },
+      { name: 'Linux', logo: null },
+      { name: 'Postman', logo: null },
+      { name: 'MS Office', logo: null },
+      { name: 'Power Platforms', logo: null },
+      
+    ],
+  },
   {
     id: 'data',
     label: 'Data & Analytics',
@@ -52,6 +96,7 @@ const categories = [
       { name: 'ETL Processes', logo: null },
     ],
   },
+
   {
     id: 'ai',
     label: 'AI & Machine Learning',
@@ -69,27 +114,11 @@ const categories = [
       { name: 'Neural Networks', logo: null },
       { name: 'NLP', logo: null },
       { name: 'Data Science', logo: null },
+      { name: 'Generative AI', logo: null },
+
     ],
   },
-  {
-    id: 'code',
-    label: 'Software Engineering',
-    icon: icons.code,
-    accent: 'blue',
-    ring: 'ring-blue-500/30',
-    glow: 'shadow-blue-500/10',
-    iconBg: 'bg-blue-500/10 text-blue-400',
-    bar: 'bg-blue-400',
-    badge: 'bg-blue-500/10 text-blue-300 border-blue-500/20',
-    skills: [
-      { name: 'React.js', logo: null },
-      { name: 'Flask', logo: null },
-      { name: 'TypeScript', logo: null },
-      { name: 'Node.js', logo: null },
-      { name: 'C / C++', logo: null },
-      { name: 'HTML / CSS / JS', logo: null },
-    ],
-  },
+  
   {
     id: 'db',
     label: 'Databases',
@@ -107,25 +136,7 @@ const categories = [
       { name: 'phpMyAdmin', logo: null },
     ],
   },
-  {
-    id: 'tools',
-    label: 'Tools & Platforms',
-    icon: icons.tools,
-    accent: 'orange',
-    ring: 'ring-orange-500/30',
-    glow: 'shadow-orange-500/10',
-    iconBg: 'bg-orange-500/10 text-orange-400',
-    bar: 'bg-orange-400',
-    badge: 'bg-orange-500/10 text-orange-300 border-orange-500/20',
-    skills: [
-      { name: 'Git & GitHub', logo: null },
-            { name: 'Visual Studio Code', logo: null },
-      { name: 'Linux', logo: null },
-      { name: 'Postman', logo: null },
-      { name: 'MS Office', logo: null },
-      { name: 'Jira / Agile', logo: null },
-    ],
-  },
+
   {
     id: 'soft',
     label: 'Soft Skills',
