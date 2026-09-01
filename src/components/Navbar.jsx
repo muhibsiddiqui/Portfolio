@@ -21,81 +21,71 @@ export default function Navbar() {
 
   return (
     <>
-      {/* ── Floating desktop navbar (logo + resume only) ── */}
-      <nav className="fixed top-5 left-1/2 -translate-x-1/2 z-50 hidden md:block w-full max-w-3xl px-4">
+      <nav className="fixed top-5 left-1/2 z-50 hidden w-full max-w-4xl -translate-x-1/2 px-4 md:block">
         <div
-          className={`flex items-center justify-between px-5 py-2.5 rounded-2xl border transition-all duration-500 ${
+          className={`flex items-center justify-between rounded-2xl px-6 py-3 transition-all duration-500 ${
             scrolled
-              ? 'bg-gray-950/80 backdrop-blur-xl border-gray-700/70 shadow-2xl shadow-black/40'
-              : 'bg-gray-900/50 backdrop-blur-lg border-gray-700/30 shadow-lg shadow-black/10'
+              ? 'bg-nav/90 shadow-2xl shadow-black/20 backdrop-blur-xl'
+              : 'bg-nav/70 shadow-lg backdrop-blur-lg'
           }`}
         >
-          {/* Logo */}
-          <a href="#home" className="flex items-center gap-2 group">
-            <span className="w-7 h-7 rounded-lg bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center">
-              <span className="text-cyan-400 font-black text-xs">M</span>
+          <a href="#home" className="group flex items-center gap-2.5">
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-cyan-500/20">
+              <span className="text-sm font-black text-cyan-500">M</span>
             </span>
-            <span className="text-base font-bold text-white group-hover:text-cyan-400 transition-colors">
-              Muhib<span className="text-cyan-400">.</span>
+            <span className="text-lg font-bold text-primary transition-colors group-hover:text-cyan-500">
+              Muhib<span className="text-cyan-500">.</span>
             </span>
           </a>
 
-          {/* Tagline — centre */}
-          <p className="text-sm text-gray-400 hidden lg:block tracking-wide font-medium">
-            Software Developer &nbsp;·&nbsp; Data Engineer 
+          <p className="hidden text-base font-medium tracking-wide text-muted lg:block">
+            Software Developer &nbsp;·&nbsp; Data Engineer
           </p>
 
-          {/* Resume CTA */}
           <a
-            href="/CV_MUHIB.pdf"
-            download
-            className="inline-flex items-center gap-1.5 px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-gray-950 text-sm font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-cyan-500/30 hover:-translate-y-px"
-          >
-            <Download size={13} />
-            Resume
-          </a>
+              href="/CV_MUHIB.pdf"
+              download
+              className="inline-flex items-center gap-2 rounded-xl bg-cyan-500 px-5 py-2.5 text-[15px] font-semibold text-gray-950 transition-all duration-200 hover:-translate-y-px hover:bg-cyan-400 hover:shadow-lg hover:shadow-cyan-500/30"
+            >
+              <Download size={15} />
+              Resume
+            </a>
         </div>
       </nav>
 
-      {/* ── Mobile navbar ── */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 md:hidden transition-all duration-300 ${
+        className={`fixed left-0 right-0 top-0 z-50 md:hidden transition-all duration-300 ${
           scrolled || isOpen
-            ? 'bg-gray-950/95 backdrop-blur-xl border-b border-gray-800/70 shadow-xl'
-            : 'bg-gray-950/70 backdrop-blur-md border-b border-gray-800/30'
+            ? 'bg-nav/95 shadow-xl backdrop-blur-xl'
+            : 'bg-nav/80 backdrop-blur-md'
         }`}
       >
-        <div className="flex items-center justify-between h-14 px-4">
-          <a href="#home" className="flex items-center gap-2">
-            <span className="w-6 h-6 rounded-md bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center">
-              <span className="text-cyan-400 font-black text-xs">M</span>
+        <div className="flex h-16 items-center justify-between px-4">
+          <a href="#home" className="flex items-center gap-2.5">
+            <span className="flex h-7 w-7 items-center justify-center rounded-md bg-cyan-500/20">
+              <span className="text-sm font-black text-cyan-500">M</span>
             </span>
-            <span className="text-base font-bold text-white">
-              Muhib<span className="text-cyan-400">.</span>
+            <span className="text-lg font-bold text-primary">
+              Muhib<span className="text-cyan-500">.</span>
             </span>
           </a>
           <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800/60 transition-colors"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+              onClick={() => setIsOpen(!isOpen)}
+              className="rounded-lg p-2 text-muted transition-colors hover:bg-card hover:text-primary"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
         </div>
 
-        {/* Mobile dropdown */}
-        <div
-          className={`overflow-hidden transition-all duration-300 ${
-            isOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
-          }`}
-        >
-          <div className="px-4 pb-5 pt-1 flex flex-col gap-1 border-t border-gray-800/50">
+        <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'}`}>
+          <div className="flex flex-col gap-1 px-4 pb-5 pt-1">
             {mobileLinks.map(({ label, href }) => (
               <a
                 key={label}
                 href={href}
                 onClick={() => setIsOpen(false)}
-                className="px-4 py-2.5 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/60 rounded-xl transition-colors"
+                className="rounded-xl px-4 py-2.5 text-sm font-medium text-muted transition-colors hover:bg-card hover:text-primary"
               >
                 {label}
               </a>
@@ -103,7 +93,7 @@ export default function Navbar() {
             <a
               href="/CV_MUHIB.pdf"
               download
-              className="mt-2 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-cyan-500 hover:bg-cyan-400 text-gray-950 text-sm font-semibold rounded-xl transition-colors"
+              className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-500 px-4 py-2.5 text-sm font-semibold text-gray-950 transition-colors hover:bg-cyan-400"
             >
               <Download size={14} />
               Download Resume

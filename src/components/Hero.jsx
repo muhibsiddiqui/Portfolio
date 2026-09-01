@@ -1,148 +1,120 @@
-import { ArrowDown, Github, Linkedin, Mail, ChevronRight, Download } from 'lucide-react'
+import { ArrowDown, Github, Linkedin, ChevronRight, Download, MapPin, Handshake } from 'lucide-react'
+import FocusCards from './FocusCards'
 
 export default function Hero() {
   return (
-    <section
-      id="home"
-      className="relative min-h-screen flex items-center overflow-hidden"
-    >
-      {/* Background grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)] bg-[size:64px_64px] opacity-20" />
-      {/* Radial glow left */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_0%_50%,rgba(6,182,212,0.10),transparent)]" />
-      {/* Radial glow right */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_60%_at_100%_30%,rgba(59,130,246,0.08),transparent)]" />
-
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-
-          {/* ── Left: Text content ── */}
+    <section id="home" className="relative flex min-h-screen items-start overflow-hidden">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pb-16 pt-32 sm:px-6 sm:pt-36 md:pt-44 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="flex flex-col items-start">
-            {/* Status badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-sm font-medium mb-7">
-              <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
-              Available for opportunities
-            </div>
-
-            {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-5">
+            <h1 className="mb-5 text-4xl font-extrabold leading-tight text-primary sm:text-5xl md:text-6xl">
               Hi, I'm{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                 Muhammad
               </span>
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
                 Muhib Siddiqui
               </span>
             </h1>
 
-            {/* Role tags */}
-            <div className="flex flex-wrap gap-2 mb-6">
-              {['Software Engineer', 'Full-Stack Developer', 'Data Engineer', 'AI Enthusiast'].map(role => (
-                <span
-                  key={role}
-                  className="px-3 py-1 bg-gray-900 border border-cyan-500/40 rounded-full text-cyan-300 text-xs font-semibold tracking-wide"
-                >
-                  {role}
-                </span>
-              ))}
-            </div>
-
-            {/* Sub-headline */}
-            <p className="text-base md:text-lg text-gray-400 max-w-xl mb-8 leading-relaxed">
+            <p className="mb-7 max-w-xl text-[17px] leading-relaxed text-muted md:text-lg">
               Full-Stack Software Engineer specialising in{' '}
-              <span className="text-cyan-400 font-medium">Software Engineering</span>,{' '}
-              <span className="text-cyan-400 font-medium">Business Intelligence</span>, and{' '}
-              <span className="text-cyan-400 font-medium">data Engineering</span> — turning raw data
+              <span className="font-medium text-cyan-400">Software Engineering</span>,{' '}
+              <span className="font-medium text-cyan-400">Business Intelligence</span>, and{' '}
+              <span className="font-medium text-cyan-400">Data Engineering</span> — turning raw data
               into actionable insights and building robust, scalable systems.
             </p>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-4 mb-10">
-              <a href="#projects" className="btn-primary">
+            <div className="mb-6">
+              <FocusCards />
+            </div>
+
+            <div className="mb-6 flex flex-wrap items-center gap-3 text-[15px] text-slate-200">
+              <span className="inline-flex items-center gap-1.5">
+                <MapPin size={16} className="text-cyan-400" />
+                Karachi, Pakistan
+              </span>
+              <span className="text-slate-500">·</span>
+              <span className="inline-flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.8)]" />
+                Open to work
+              </span>
+            </div>
+
+            <div className="mb-7 flex items-center gap-3">
+              {[
+                { href: 'https://github.com/muhibsiddiqui', icon: Github, label: 'GitHub', external: true },
+                { href: 'https://linkedin.com/in/muhibsiddiqui', icon: Linkedin, label: 'LinkedIn', external: true },
+                { href: '#contact', icon: Handshake, label: "Let's Connect", external: false },
+              ].map(({ href, icon: Icon, label, external }) => (
+                <a
+                  key={href}
+                  href={href}
+                  aria-label={label}
+                  title={label}
+                  target={external ? '_blank' : undefined}
+                  rel={external ? 'noreferrer' : undefined}
+                  className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.04] text-slate-300 ring-1 ring-white/10 transition-colors hover:text-cyan-400 hover:ring-cyan-400/30"
+                >
+                  <Icon size={20} />
+                </a>
+              ))}
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href="/CV_MUHIB.pdf"
+                download
+                className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-indigo-500 to-violet-500 px-6 py-3 text-[15px] font-semibold text-white shadow-lg shadow-violet-500/20 transition-transform hover:-translate-y-0.5"
+              >
+                <Download size={16} />
+                Download Resume
+              </a>
+              <a
+                href="#projects"
+                className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-blue-500 to-indigo-500 px-6 py-3 text-[15px] font-semibold text-white shadow-lg shadow-blue-500/20 transition-transform hover:-translate-y-0.5"
+              >
                 View My Work
                 <ChevronRight size={18} />
               </a>
-              <a href="/CV_MUHIB.pdf" download className="btn-outline">
-                <Download size={16} />
-                Download CV
-              </a>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex items-center gap-3">
-              <span className="text-xs text-gray-600 uppercase tracking-widest mr-1">Find me on</span>
-              <a
-                href="https://github.com/muhibsiddiqui"
-                target="_blank"
-                rel="noreferrer"
-                className="p-2.5 bg-gray-900 border border-gray-800 rounded-lg text-gray-400 hover:text-white hover:border-cyan-500/50 hover:bg-gray-800 transition-all duration-300"
-              >
-                <Github size={18} />
-              </a>
-              <a
-                href="https://linkedin.com/in/muhibsiddiqui"
-                target="_blank"
-                rel="noreferrer"
-                className="p-2.5 bg-gray-900 border border-gray-800 rounded-lg text-gray-400 hover:text-white hover:border-cyan-500/50 hover:bg-gray-800 transition-all duration-300"
-              >
-                <Linkedin size={18} />
-              </a>
-              <a
-                href="mailto:muhibsiddiqui25@gmail.com"
-                className="p-2.5 bg-gray-900 border border-gray-800 rounded-lg text-gray-400 hover:text-white hover:border-cyan-500/50 hover:bg-gray-800 transition-all duration-300"
-              >
-                <Mail size={18} />
-              </a>
             </div>
           </div>
 
-          {/* ── Right: Profile picture ── */}
-          <div className="flex justify-center lg:justify-end order-first lg:order-last">
-            <div className="relative">
-              {/* Outer glow */}
-              <div className="absolute -inset-4 rounded-full bg-gradient-to-br from-cyan-500/25 via-blue-600/15 to-transparent blur-2xl" />
-              {/* Slow-spin dashed ring */}
-              <div className="absolute -inset-5 rounded-full border-2 border-dashed border-cyan-500/20 animate-[spin_30s_linear_infinite]" />
-              {/* Static outer ring */}
-              <div className="absolute -inset-2 rounded-full border border-gray-700/60" />
+          <div className="order-first flex justify-center lg:order-last lg:justify-end">
+            <div className="relative h-64 w-64 sm:h-80 sm:w-80 md:h-[22rem] md:w-[22rem]">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-400/35 via-blue-500/20 to-violet-500/30 blur-2xl" />
 
-              {/* Photo circle */}
-              <div className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-gray-800 shadow-2xl shadow-cyan-500/10 bg-gray-900">
-                {/* ↓ Replace with your real photo: src="/images/your-photo.jpg" */}
-                <img
-                  src="/images/pp.jpeg"
-                  alt="Muhammad Muhib Siddiqui"
-                  className="w-full h-full object-cover object-top scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-950/50 via-transparent to-transparent" />
-              </div>
+              <div className="photo-orbit absolute inset-0 rounded-full border-[1.5px] border-dashed border-cyan-400/50 animate-spin-slow" />
 
-              {/* Floating badge — experience */}
-            
-
-              {/* Floating badge — open to work */}
-              <div className="absolute -right-8 bottom-10 bg-gray-900/95 border border-gray-700 rounded-xl px-3 py-2.5 shadow-xl">
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse flex-shrink-0" />
-                  <span className="text-xs text-gray-300 font-medium whitespace-nowrap">Open to Work</span>
+              <div className="absolute inset-[14px] rounded-full bg-gradient-to-br from-cyan-400 via-blue-500 to-violet-500 p-[3px] shadow-[0_0_32px_rgba(34,211,238,0.25)]">
+                <div className="h-full w-full overflow-hidden rounded-full bg-[#070d18] p-[5px]">
+                  <img
+                    src="/images/pp.jpeg"
+                    alt="Muhammad Muhib Siddiqui"
+                    className="h-full w-full scale-110 object-cover object-top"
+                  />
                 </div>
               </div>
 
-              {/* Floating badge — FAST NUCES */}
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-gray-900/95 border border-cyan-500/30 rounded-full px-4 py-1.5 shadow-xl whitespace-nowrap">
-                <span className="text-xs text-cyan-400 font-semibold">FAST-NUCES '26</span>
+              <div className="absolute right-0 top-[58%] z-10 rounded-2xl bg-[#1a2332]/95 px-3.5 py-2.5 shadow-lg ring-1 ring-white/10">
+                <div className="flex items-center gap-2">
+                  <span className="h-2 w-2 flex-shrink-0 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.8)]" />
+                  <span className="whitespace-nowrap text-sm font-medium text-slate-200">Open to Work</span>
+                </div>
+              </div>
+
+              <div className="absolute bottom-1 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-full bg-[#0b1220]/90 px-4 py-1.5 ring-1 ring-cyan-400/40">
+                <span className="text-sm font-semibold tracking-wide text-cyan-400">FAST-NUCES '26</span>
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <a
         href="#about"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gray-600 hover:text-cyan-400 transition-colors animate-bounce"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-faint transition-colors hover:text-cyan-500"
       >
         <ArrowDown size={22} />
       </a>

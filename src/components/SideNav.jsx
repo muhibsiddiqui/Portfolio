@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
 
 const sections = [
-  { id: 'home',     label: 'Home' },
-  { id: 'about',    label: 'About' },
-  { id: 'skills',   label: 'Skills' },
+  { id: 'home', label: 'Home' },
+  { id: 'about', label: 'About' },
+  { id: 'skills', label: 'Skills' },
   { id: 'projects', label: 'Projects' },
-  { id: 'contact',  label: 'Contact' },
+  { id: 'contact', label: 'Contact' },
 ]
 
 export default function SideNav() {
@@ -22,6 +22,7 @@ export default function SideNav() {
         }
       }
     }
+    handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -29,44 +30,38 @@ export default function SideNav() {
   return (
     <nav
       aria-label="Page sections"
-      className="fixed right-5 top-1/2 -translate-y-1/2 z-40 hidden md:flex flex-col items-end gap-4"
+      className="fixed right-6 top-1/2 z-50 hidden -translate-y-1/2 md:flex flex-col items-end gap-5"
     >
       {sections.map(({ id, label }) => {
         const isActive = active === id
-        const isHovered = hovered === id
+        const showLabel = isActive || hovered === id
 
         return (
           <a
             key={id}
             href={`#${id}`}
             aria-label={label}
+            aria-current={isActive ? 'true' : undefined}
             onMouseEnter={() => setHovered(id)}
             onMouseLeave={() => setHovered(null)}
-            className="flex items-center gap-2.5 group"
+              className="group flex items-center gap-3"
           >
-            {/* Label — slides in from right on hover or when active */}
             <span
-              className={`text-sm font-medium tracking-wide transition-all duration-200 whitespace-nowrap ${
-                isActive
-                  ? 'text-cyan-400 opacity-100 translate-x-0'
-                  : isHovered
-                  ? 'text-gray-300 opacity-100 translate-x-0'
-                  : 'text-gray-500 opacity-0 translate-x-2 pointer-events-none'
-              }`}
+              className={`text-[13px] font-medium transition-all duration-200 ${
+                showLabel ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-2 pointer-events-none'
+              } ${isActive ? 'text-[#3b9eff]' : 'text-slate-400'}`}
             >
               {label}
             </span>
 
-            {/* Dot */}
-            <span
-              className={`block rounded-full transition-all duration-300 ${
-                isActive
-                  ? 'w-5 h-5 bg-cyan-400 shadow-[0_0_12px_3px_rgba(34,211,238,0.55)]'
-                  : isHovered
-                  ? 'w-4 h-4 bg-gray-400'
-                  : 'w-3 h-3 bg-gray-600 group-hover:bg-gray-400'
-              }`}
-            />
+            {isActive ? (
+              <span className="relative flex h-4 w-4 items-center justify-center">
+                <span className="absolute inset-0 rounded-full border-[1.5px] border-[#3b9eff] shadow-[0_0_10px_rgba(59,158,255,0.7)]" />
+                <span className="h-2 w-2 rounded-full bg-[#3b9eff]" />
+              </span>
+            ) : (
+              <span className="block h-2 w-2 rounded-full bg-slate-500/80 group-hover:bg-slate-400" />
+            )}
           </a>
         )
       })}
