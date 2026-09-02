@@ -4,10 +4,10 @@
   "framework": "vite",
   "headers": [
     {
-      "source": "/CV_MUHIB.pdf",
+      "source": "/CV_MuhibSiddiquiSE.pdf",
       "headers": [
         { "key": "Content-Type", "value": "application/pdf" },
-        { "key": "Content-Disposition", "value": "attachment; filename=\"CV_MUHIB.pdf\"" }
+        { "key": "Content-Disposition", "value": "attachment; filename=\"CV_MuhibSiddiquiSE.pdf\"" }
       ]
     }
   ]

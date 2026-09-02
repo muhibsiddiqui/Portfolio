@@ -24,7 +24,7 @@ export default function Footer() {
               </span>
             </a>
             <p className="max-w-xs text-sm leading-relaxed text-muted">
-              Data Engineer · Software developer · Software Engineer based in Karachi, Pakistan.
+              Data Engineer · Software developer · AI Engineer based in Karachi, Pakistan.
               Fresh Graduate from FAST-NUCES.
             </p>
             <div className="space-y-2 pt-1">
@@ -63,7 +63,7 @@ export default function Footer() {
               ))}
             </div>
             <a
-              href="/CV_MUHIB.pdf"
+              href="/CV_MuhibSiddiquiSE.pdf"
               download
               className="inline-flex items-center gap-2 rounded-xl bg-cyan-500/10 px-4 py-2 text-sm font-medium text-cyan-600 transition-colors hover:bg-cyan-500/20 dark:text-cyan-400"
             >

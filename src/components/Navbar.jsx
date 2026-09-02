@@ -43,7 +43,7 @@ export default function Navbar() {
           </p>
 
           <a
-              href="/CV_MUHIB.pdf"
+              href="/CV_MuhibSiddiquiSE.pdf"
               download
               className="inline-flex items-center gap-2 rounded-xl bg-cyan-500 px-5 py-2.5 text-[15px] font-semibold text-gray-950 transition-all duration-200 hover:-translate-y-px hover:bg-cyan-400 hover:shadow-lg hover:shadow-cyan-500/30"
             >
@@ -91,7 +91,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="/CV_MUHIB.pdf"
+              href="/CV_MuhibSiddiquiSE.pdf"
               download
               className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-500 px-4 py-2.5 text-sm font-semibold text-gray-950 transition-colors hover:bg-cyan-400"
             >

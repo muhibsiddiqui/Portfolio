@@ -102,31 +102,39 @@ export default function About() {
               </span>
             </div>
 
-            <div className="grid w-full grid-cols-1 gap-3 sm:grid-cols-3">
+            <div className="grid w-full grid-cols-1 gap-3 sm:grid-cols-2">
               {[
-                { icon: <Mail size={16} />, label: 'Email', value: 'muhibsiddiqui25@gmail.com' },
-                { icon: <Phone size={16} />, label: 'Phone', value: '+92 318 0235426' },
-                { icon: <Github size={16} />, label: 'GitHub', value: 'muhibsiddiqui' },
-              ].map(({ icon, label, value }) => (
-                <div key={label} className="flex min-w-0 items-start gap-2.5 rounded-xl bg-white/[0.025] p-3.5 ring-1 ring-white/[0.07]">
-                  <span className="mt-0.5 flex-shrink-0 text-cyan-400">{icon}</span>
-                  <div className="min-w-0">
-                    <p className="mb-0.5 text-xs uppercase tracking-wide text-faint">{label}</p>
-                    <p className="truncate text-sm text-slate-200">{value}</p>
+                { icon: <Mail size={16} />, label: 'Email', value: 'muhibsiddiqui25@gmail.com', href: 'mailto:muhibsiddiqui25@gmail.com', wide: true },
+                { icon: <Phone size={16} />, label: 'Phone', value: '+92 318 0235426', href: 'tel:+923180235426' },
+                { icon: <Github size={16} />, label: 'GitHub', value: 'muhibsiddiqui', href: 'https://github.com/muhibsiddiqui' },
+              ].map(({ icon, label, value, href, wide }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target={href.startsWith('http') ? '_blank' : undefined}
+                  rel={href.startsWith('http') ? 'noreferrer' : undefined}
+                  className={`flex min-w-0 items-center gap-3 overflow-hidden rounded-xl bg-white/[0.025] px-3.5 py-3 ring-1 ring-white/[0.07] transition-colors hover:bg-white/[0.05] hover:ring-white/10 ${wide ? 'sm:col-span-2' : ''}`}
+                >
+                  <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-cyan-500/10 text-cyan-400">
+                    {icon}
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-faint">{label}</p>
+                    <p className="break-all text-[13px] font-medium leading-snug text-slate-200">{value}</p>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
 
             <div className="grid w-full grid-cols-1 gap-3 sm:grid-cols-2">
               {timeline.map((item, i) => (
-                <div key={i} className="flex items-center gap-3 rounded-xl bg-white/[0.025] px-4 py-3 ring-1 ring-white/[0.07]">
+                <div key={i} className="flex min-w-0 items-start gap-3 overflow-hidden rounded-xl bg-white/[0.025] px-4 py-3.5 ring-1 ring-white/[0.07]">
                   <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-cyan-500/10 text-cyan-400">
                     {item.icon}
                   </div>
-                  <div className="min-w-0">
-                    <p className="text-sm font-semibold leading-tight text-primary">{item.title}</p>
-                    <p className="text-sm text-faint">{item.place} · {item.period}</p>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-sm font-semibold leading-snug text-primary">{item.title}</p>
+                    <p className="mt-0.5 break-words text-[13px] leading-snug text-faint">{item.place} · {item.period}</p>
                   </div>
                 </div>
               ))}

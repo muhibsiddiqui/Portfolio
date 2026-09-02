@@ -64,7 +64,7 @@ export default function Hero() {
 
             <div className="flex flex-wrap items-center gap-3">
               <a
-                href="/CV_MUHIB.pdf"
+                href="/CV_MuhibSiddiquiSE.pdf"
                 download
                 className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-indigo-500 to-violet-500 px-6 py-3 text-[15px] font-semibold text-white shadow-lg shadow-violet-500/20 transition-transform hover:-translate-y-0.5"
               >
@@ -82,30 +82,41 @@ export default function Hero() {
           </div>
 
           <div className="order-first flex justify-center lg:order-last lg:justify-end">
-            <div className="relative h-64 w-64 sm:h-80 sm:w-80 md:h-[22rem] md:w-[22rem]">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-400/35 via-blue-500/20 to-violet-500/30 blur-2xl" />
+            <div className="hero-photo relative h-64 w-64 sm:h-72 sm:w-72 md:h-80 md:w-80">
+              {/* Ambient glow */}
+              <div className="absolute inset-0 rounded-full bg-cyan-400/15 blur-3xl" />
+              <div className="absolute -bottom-6 -right-4 h-28 w-28 rounded-full bg-violet-500/15 blur-2xl" />
 
-              <div className="photo-orbit absolute inset-0 rounded-full border-[1.5px] border-dashed border-cyan-400/50 animate-spin-slow" />
-
-              <div className="absolute inset-[14px] rounded-full bg-gradient-to-br from-cyan-400 via-blue-500 to-violet-500 p-[3px] shadow-[0_0_32px_rgba(34,211,238,0.25)]">
-                <div className="h-full w-full overflow-hidden rounded-full bg-[#070d18] p-[5px]">
-                  <img
-                    src="/images/pp.jpeg"
-                    alt="Muhammad Muhib Siddiqui"
-                    className="h-full w-full scale-110 object-cover object-top"
-                  />
-                </div>
+              {/* Spinning gradient border */}
+              <div className="absolute inset-0 overflow-hidden rounded-full">
+                <div className="hero-photo-spin absolute -inset-[35%] bg-[conic-gradient(from_0deg,#22d3ee,#3b82f6,#8b5cf6,#22d3ee)] opacity-80" />
               </div>
 
-              <div className="absolute right-0 top-[58%] z-10 rounded-2xl bg-[#1a2332]/95 px-3.5 py-2.5 shadow-lg ring-1 ring-white/10">
-                <div className="flex items-center gap-2">
-                  <span className="h-2 w-2 flex-shrink-0 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.8)]" />
-                  <span className="whitespace-nowrap text-sm font-medium text-slate-200">Open to Work</span>
-                </div>
+              {/* Photo */}
+              <div className="absolute inset-[3px] overflow-hidden rounded-full bg-[#070d18]">
+                <img
+                  src="/images/pp.jpeg"
+                  alt="Muhammad Muhib Siddiqui"
+                  className="h-full w-full object-cover object-top"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#070d18]/30 via-transparent to-transparent" />
               </div>
 
-              <div className="absolute bottom-1 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-full bg-[#0b1220]/90 px-4 py-1.5 ring-1 ring-cyan-400/40">
-                <span className="text-sm font-semibold tracking-wide text-cyan-400">FAST-NUCES '26</span>
+              {/* Dashed orbit ring */}
+              <div className="absolute -inset-4 animate-spin-slow rounded-full border border-dashed border-cyan-400/25" />
+
+              {/* Open to Work badge */}
+              <div className="absolute -bottom-2 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full bg-[#0b1220]/95 px-3.5 py-1.5 shadow-lg ring-1 ring-white/10 backdrop-blur-sm">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-60" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-green-400" />
+                </span>
+                <span className="text-[12px] font-medium text-slate-100">Open to Work</span>
+              </div>
+
+              {/* FAST badge */}
+              <div className="absolute -right-2 top-[15%] z-10 rounded-full bg-[#0b1220]/95 px-3 py-1 shadow-lg ring-1 ring-cyan-400/40 backdrop-blur-sm">
+                <span className="text-[11px] font-semibold tracking-wide text-cyan-300">FAST-NUCES '26</span>
               </div>
             </div>
           </div>
